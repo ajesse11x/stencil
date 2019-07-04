@@ -50,12 +50,15 @@
     "test.sys.node": "cd test/sys/node && npm run test.prod",
     "test.testing": "node scripts/test-testing.js",
     "test.watch": "jest --watch",
-    "vermoji": "node scripts/vermoji.js"
+    "vermoji": "node scripts/vermoji.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "chokidar": "2.0.3",
     "jsdom": "11.11.0",
-    "typescript": "~2.9.1"
+    "typescript": "~2.9.1",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@types/autoprefixer": "^6.7.3",
@@ -167,5 +170,6 @@
       "<rootDir>/www/"
     ],
     "testRegex": "/src/.*\\.spec\\.(ts|tsx|js)$"
-  }
+  },
+  "snyk": true
 }
